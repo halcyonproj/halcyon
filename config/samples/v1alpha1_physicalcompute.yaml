@@ -1,0 +1,44 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: PhysicalCompute
+metadata:
+  name: c1-ru12
+  annotations:
+    ui.halcyonproj.dev/description: "Supermicro machine with X10DRU motherboard"
+spec:
+  computeClass: supermicro
+  UID: "off"
+  location:
+    rackName: c1
+  bmc:
+    powerState: "off"
+    connection:
+      type: ipmi
+      interfaceName: mgmt
+      credentialRef:
+        name: ipmi
+  interfaces:
+    - name: mgmt
+      mac: 0c:c4:7a:67:6d:d6
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: PhysicalCompute
+metadata:
+  name: c1-ru10
+  annotations:
+    ui.halcyonproj.dev/description: "Sun microsystems v20z"
+spec:
+  computeClass: sun
+  UID: "off"
+  location:
+    rackName: c1
+  bmc:
+    powerState: "off"
+    connection:
+      type: ipmi
+      interfaceName: mgmt
+      credentialRef:
+        name: sun-ipmi
+  interfaces:
+    - name: mgmt
+      mac: 00:09:3d:12:5b:f4

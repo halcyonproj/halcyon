@@ -1,0 +1,44 @@
+---
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: validating-webhook-configuration
+webhooks:
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-halcyon-v1alpha1-availabilityzone
+  failurePolicy: Fail
+  name: vavailabilityzone.kb.io
+  rules:
+  - apiGroups:
+    - halcyonproj.dev
+    apiVersions:
+    - v1alpha1
+    operations:
+    - DELETE
+    resources:
+    - availabilityzones
+  sideEffects: None
+- admissionReviewVersions:
+  - v1
+  clientConfig:
+    service:
+      name: webhook-service
+      namespace: system
+      path: /validate-halcyon-v1alpha1-region
+  failurePolicy: Fail
+  name: vregion.kb.io
+  rules:
+  - apiGroups:
+    - halcyonproj.dev
+    apiVersions:
+    - v1alpha1
+    operations:
+    - DELETE
+    resources:
+    - regions
+  sideEffects: None

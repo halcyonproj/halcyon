@@ -1,0 +1,9 @@
+apiVersion: halcyonproj.dev/v1alpha1
+kind: FabricClass
+metadata:
+  labels:
+    app.kubernetes.io/name: halcyon
+    app.kubernetes.io/managed-by: kustomize
+  name: fabricclass-sample
+spec:
+  # TODO(user): Add fields here

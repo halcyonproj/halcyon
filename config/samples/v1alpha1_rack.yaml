@@ -1,0 +1,72 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Rack
+metadata:
+  name: dc16-r01-u01
+  annotations:
+    ui.halcyonproj.dev/description: "Core networking cabinet in DC16"
+spec:
+  serialNumber: DN1527010260
+  rackTypeName: standard-networking-rack
+  location:
+    dataCenterName: dc16
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Rack
+metadata:
+  name: dc16-r02-u01
+  annotations:
+    ui.halcyonproj.dev/description: "Compute cabinet 1 in DC16 row 2"
+spec:
+  serialNumber: DN1527010261
+  rackTypeName: standard-compute-rack
+  location:
+    dataCenterName: dc16
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Rack
+metadata:
+  name: dc16-r02-u02
+  annotations:
+    ui.halcyonproj.dev/description: "Compute cabinet 2 in DC16 row 2"
+spec:
+  serialNumber: DN1527010262
+  rackTypeName: standard-compute-rack
+  location:
+    dataCenterName: dc16
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Rack
+metadata:
+  name: dc16-r02-u03
+  annotations:
+    ui.halcyonproj.dev/description: "Compute cabinet 3 in DC16 row 2"
+spec:
+  serialNumber: DN1527010263
+  rackTypeName: standard-compute-rack
+  location:
+    dataCenterName: dc16
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Rack
+metadata:
+  name: dc16-r02-u04
+  annotations:
+    ui.halcyonproj.dev/description: "Compute cabinet 4 in DC16 row 2"
+spec:
+  serialNumber: DN1527010264
+  rackTypeName: standard-compute-rack
+  location:
+    dataCenterName: dc16
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Rack
+metadata:
+  name: dc16-r02-u05
+  annotations:
+    ui.halcyonproj.dev/description: "Compute cabinet 5 in DC16 row 2"
+spec:
+  serialNumber: DN1527010265
+  rackTypeName: standard-compute-rack
+  location:
+    dataCenterName: dc16

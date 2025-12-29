@@ -1,0 +1,7 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: Region
+metadata:
+  name: us-east
+  annotations:
+    ui.halcyonproj.dev/description: "Northern Virginia (US)"

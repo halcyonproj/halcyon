@@ -1,0 +1,112 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.1
+  name: physicalswitches.halcyonproj.dev
+spec:
+  group: halcyonproj.dev
+  names:
+    kind: PhysicalSwitch
+    listKind: PhysicalSwitchList
+    plural: physicalswitches
+    shortNames:
+    - switch
+    singular: physicalswitch
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.manufacturer
+      name: Manufacturer
+      type: string
+    - jsonPath: .status.model
+      name: Model
+      type: string
+    - jsonPath: .spec.identifier
+      name: Identifier
+      type: string
+    - jsonPath: .spec.location.rackName
+      name: Rack
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/datacenter
+      name: Datacenter
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/availability-zone
+      name: Availability Zone
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/region
+      name: Region
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PhysicalSwitch is the Schema for the physicalswitches API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PhysicalSwitchSpec defines the desired state of PhysicalSwitch
+            properties:
+              fabricClass:
+                type: string
+              identifier:
+                type: string
+              location:
+                properties:
+                  rackName:
+                    type: string
+                required:
+                - rackName
+                type: object
+            required:
+            - fabricClass
+            - identifier
+            - location
+            type: object
+          status:
+            description: PhysicalSwitchStatus defines the observed state of PhysicalSwitch
+            properties:
+              deviceID:
+                type: string
+              ipAddress:
+                type: string
+              macAddress:
+                type: string
+              manufacturer:
+                type: string
+              model:
+                type: string
+              serial:
+                type: string
+              version:
+                type: string
+            required:
+            - deviceID
+            - ipAddress
+            - macAddress
+            - manufacturer
+            - model
+            - serial
+            - version
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

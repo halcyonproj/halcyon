@@ -1,0 +1,27 @@
+# permissions for end users to edit physicalcables.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: halcyon
+    app.kubernetes.io/managed-by: kustomize
+  name: physicalcable-editor-role
+rules:
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - physicalcables
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - physicalcables/status
+  verbs:
+  - get

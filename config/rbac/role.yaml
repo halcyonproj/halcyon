@@ -1,0 +1,59 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - availabilityzones
+  - datacenters
+  - fabricclasses
+  - physicalcables
+  - physicalinterfaces
+  - physicalports
+  - physicalswitches
+  - racks
+  - racktypes
+  - regions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - availabilityzones/finalizers
+  - datacenters/finalizers
+  - fabricclasses/finalizers
+  - physicalcables/finalizers
+  - physicalinterfaces/finalizers
+  - physicalports/finalizers
+  - physicalswitches/finalizers
+  - racks/finalizers
+  - racktypes/finalizers
+  - regions/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - availabilityzones/status
+  - datacenters/status
+  - fabricclasses/status
+  - physicalcables/status
+  - physicalinterfaces/status
+  - physicalports/status
+  - physicalswitches/status
+  - racks/status
+  - racktypes/status
+  - regions/status
+  verbs:
+  - get
+  - patch
+  - update

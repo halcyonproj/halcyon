@@ -1,0 +1,23 @@
+# permissions for end users to view physicalports.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: halcyon
+    app.kubernetes.io/managed-by: kustomize
+  name: physicalport-viewer-role
+rules:
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - physicalports
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - physicalports/status
+  verbs:
+  - get

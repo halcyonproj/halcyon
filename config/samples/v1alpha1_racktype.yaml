@@ -1,0 +1,36 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: RackType
+metadata:
+  name: standard-compute-cabinet
+  annotations:
+    ui.halcyonproj.dev/description: "Standard compute cabinet"
+spec:
+  manufacturer: APC
+  model: AR3157
+  formFactor:
+    enclosure: cabinet
+    position: free-standing
+    posts: 4
+  units:
+    start: 1
+    end: 48
+    order: bottom-up
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: RackType
+metadata:
+  name: standard-networking-rack
+  annotations:
+    ui.halcyonproj.dev/description: "Standard networking rack"
+spec:
+  manufacturer: APC
+  model: AR201
+  formFactor:
+    enclosure: frame
+    position: free-standing
+    posts: 2
+  units:
+    start: 1
+    end: 45
+    order: bottom-up

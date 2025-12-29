@@ -1,0 +1,23 @@
+# permissions for end users to view physicalcomputes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: halcyon
+    app.kubernetes.io/managed-by: kustomize
+  name: physicalcompute-viewer-role
+rules:
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - physicalcomputes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - halcyonproj.dev
+  resources:
+  - physicalcomputes/status
+  verbs:
+  - get

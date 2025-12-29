@@ -1,0 +1,258 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.1
+  name: physicalcomputes.halcyonproj.dev
+spec:
+  group: halcyonproj.dev
+  names:
+    kind: PhysicalCompute
+    listKind: PhysicalComputeList
+    plural: physicalcomputes
+    shortNames:
+    - compute
+    singular: physicalcompute
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.bmc.powerState
+      name: Power State
+      type: string
+    - jsonPath: .status.UID
+      name: UID
+      type: string
+    - jsonPath: .status.deviceInfo.product.manufacturerName
+      name: Manufacturer
+      type: string
+    - jsonPath: .status.deviceInfo.product.serial
+      name: Serial Number
+      type: string
+    - jsonPath: .spec.location.rackName
+      name: Rack
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/datacenter
+      name: Datacenter
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/availability-zone
+      name: Availability Zone
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/region
+      name: Region
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PhysicalCompute is the Schema for the physicalcomputes API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PhysicalComputeSpec defines the desired state of PhysicalCompute
+            properties:
+              UID:
+                enum:
+                - ""
+                - "on"
+                - "off"
+                - unknown
+                type: string
+              bmc:
+                properties:
+                  connection:
+                    properties:
+                      credentialRef:
+                        properties:
+                          name:
+                            type: string
+                        required:
+                        - name
+                        type: object
+                      interfaceName:
+                        type: string
+                      type:
+                        enum:
+                        - ipmi
+                        - redfish
+                        type: string
+                    required:
+                    - credentialRef
+                    - interfaceName
+                    - type
+                    type: object
+                  powerState:
+                    enum:
+                    - ""
+                    - "on"
+                    - "off"
+                    - unknown
+                    type: string
+                required:
+                - connection
+                type: object
+              computeClass:
+                type: string
+              interfaces:
+                items:
+                  properties:
+                    mac:
+                      type: string
+                    name:
+                      type: string
+                  required:
+                  - mac
+                  - name
+                  type: object
+                type: array
+              location:
+                properties:
+                  rackName:
+                    type: string
+                required:
+                - rackName
+                type: object
+            required:
+            - bmc
+            - computeClass
+            - location
+            type: object
+          status:
+            description: PhysicalComputeStatus defines the observed state of PhysicalCompute
+            properties:
+              UID:
+                description: |-
+                  INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
+                  Important: Run "make" to regenerate code after modifying this file
+                enum:
+                - "on"
+                - "off"
+                - unknown
+                type: string
+              bmc:
+                properties:
+                  BIOSBuildDate:
+                    type: string
+                  BIOSVersion:
+                    type: string
+                  GUID:
+                    type: string
+                  IPMIVersion:
+                    type: string
+                  firmwareVersion:
+                    type: string
+                  manufacturerID:
+                    type: string
+                  manufacturerName:
+                    type: string
+                  powerPolicy:
+                    type: string
+                  powerState:
+                    enum:
+                    - "on"
+                    - "off"
+                    - unknown
+                    type: string
+                type: object
+              conditions:
+                items:
+                  properties:
+                    lastTransitionTime:
+                      format: date-time
+                      type: string
+                    message:
+                      type: string
+                    reason:
+                      type: string
+                    status:
+                      type: string
+                    type:
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - message
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+              deviceInfo:
+                properties:
+                  board:
+                    properties:
+                      manufacturerName:
+                        type: string
+                      partNumber:
+                        type: string
+                      serial:
+                        type: string
+                    type: object
+                  chassis:
+                    properties:
+                      partNumber:
+                        type: string
+                      serial:
+                        type: string
+                    type: object
+                  product:
+                    properties:
+                      manufacturerName:
+                        type: string
+                      partNumber:
+                        type: string
+                      serial:
+                        type: string
+                    type: object
+                required:
+                - board
+                - chassis
+                - product
+                type: object
+              resources:
+                properties:
+                  allocatable:
+                    additionalProperties:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    description: ResourceList is a set of (resource name, quantity)
+                      pairs.
+                    type: object
+                  capacity:
+                    additionalProperties:
+                      anyOf:
+                      - type: integer
+                      - type: string
+                      pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                      x-kubernetes-int-or-string: true
+                    description: ResourceList is a set of (resource name, quantity)
+                      pairs.
+                    type: object
+                type: object
+            required:
+            - bmc
+            - deviceInfo
+            - resources
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

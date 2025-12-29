@@ -1,0 +1,39 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: DataCenter
+metadata:
+  name: dc16
+  annotations:
+    ui.halcyonproj.dev/description: "Equinix DC16"
+spec:
+  type: colocation
+  provider: Equinix
+  location:
+    address: "44740 Performance Circle, Ashburn, Virginia, United States of America, 20147"
+    availabilityZoneName: us-east-1
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: DataCenter
+metadata:
+  name: dc17
+  annotations:
+    ui.halcyonproj.dev/description: "Equinix DC17"
+spec:
+  type: colocation
+  provider: Equinix
+  location:
+    address: "44710 Performance Circle, Ashburn, Virginia, United States of America, 20147"
+    availabilityZoneName: us-east-1
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: DataCenter
+metadata:
+  name: dc18
+  annotations:
+    ui.halcyonproj.dev/description: "Equinix DC18"
+spec:
+  type: colocation
+  provider: Equinix
+  location:
+    address: "44690 Performance Circle, Ashburn, Virginia, United States of America, 20147"
+    availabilityZoneName: us-east-1

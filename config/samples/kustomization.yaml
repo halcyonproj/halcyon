@@ -1,0 +1,14 @@
+## Append samples of your project ##
+resources:
+- v1alpha1_region.yaml
+- v1alpha1_availabilityzone.yaml
+- v1alpha1_datacenter.yaml
+- v1alpha1_rack.yaml
+- v1alpha1_racktype.yaml
+- v1alpha1_physicalcompute.yaml
+- v1alpha1_physicalcable.yaml
+- v1alpha1_physicalinterface.yaml
+- v1alpha1_physicalswitch.yaml
+- v1alpha1_physicalport.yaml
+- v1alpha1_fabricclass.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

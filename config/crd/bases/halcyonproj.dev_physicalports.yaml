@@ -1,0 +1,115 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.1
+  name: physicalports.halcyonproj.dev
+spec:
+  group: halcyonproj.dev
+  names:
+    kind: PhysicalPort
+    listKind: PhysicalPortList
+    plural: physicalports
+    shortNames:
+    - port
+    singular: physicalport
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.state
+      name: State
+      type: string
+    - jsonPath: .status.observedMAC
+      name: Observed MAC
+      type: string
+    - jsonPath: .status.duplex
+      name: Duplex
+      priority: 1
+      type: string
+    - jsonPath: .status.negotiatedSpeed
+      name: Link Speed
+      priority: 1
+      type: number
+    - jsonPath: .status.isUplink
+      name: Uplink
+      priority: 1
+      type: string
+    - jsonPath: .status.aggregationEnabled
+      name: Aggregating
+      priority: 1
+      type: string
+    - jsonPath: .status.aggregationProtocol
+      name: Aggregation Protocol
+      priority: 1
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/switch
+      name: Switch
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/rack
+      name: Rack
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/datacenter
+      name: Datacenter
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/availability-zone
+      name: Availability Zone
+      type: string
+    - jsonPath: .metadata.labels.topology\.halcyonproj\.dev/region
+      name: Region
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PhysicalPort is the Schema for the physicalports API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PhysicalPortSpec defines the desired state of PhysicalPort
+            type: object
+          status:
+            description: PhysicalPortStatus defines the observed state of PhysicalPort
+            properties:
+              aggregationEnabled:
+                type: boolean
+              aggregationProtocol:
+                type: string
+              autoNegotiated:
+                type: boolean
+              duplex:
+                type: string
+              isUplink:
+                type: boolean
+              maxSpeed:
+                type: integer
+              negotiatedSpeed:
+                type: integer
+              observedMAC:
+                type: string
+              state:
+                type: string
+            required:
+            - aggregationEnabled
+            - isUplink
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

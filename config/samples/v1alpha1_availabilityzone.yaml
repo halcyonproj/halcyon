@@ -1,0 +1,10 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: AvailabilityZone
+metadata:
+  name: us-east-1
+  annotations:
+    ui.halcyonproj.dev/description: "Availability zone within us-east"
+spec:
+  location:
+    regionName: us-east

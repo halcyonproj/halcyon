@@ -1,0 +1,20 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: PhysicalCable
+metadata:
+  name: c1-ru12-mgmt
+  annotations:
+    ui.halcyonproj.dev/description: "Cable connecting supermicro compute to a target switch port"
+spec:
+  sourceInterface: 0c-c4-7a-67-6d-d6
+  targetPort: c1-ru38-23
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: PhysicalCable
+metadata:
+  name: c1-ru10-mgmt
+  annotations:
+    ui.halcyonproj.dev/description: "Cable connecting sun microsystems compute to a target switch port"
+spec:
+  sourceInterface: 00-09-3d-12-5b-f4
+  targetPort: c1-ru38-17

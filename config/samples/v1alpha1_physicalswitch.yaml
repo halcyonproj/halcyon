@@ -1,0 +1,24 @@
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: PhysicalSwitch
+metadata:
+  name: dc16-r01-u01-ru40
+  annotations:
+    ui.halcyonproj.dev/description: "Unifi switch"
+spec:
+  location:
+    rackName: dc16-r01-u01
+  identifier: 74ACB9E42DCE
+  fabricClass: unifi
+---
+apiVersion: halcyonproj.dev/v1alpha1
+kind: PhysicalSwitch
+metadata:
+  name: dc16-r01-u01-ru42
+  annotations:
+    ui.halcyonproj.dev/description: "Unifi flex switch"
+spec:
+  location:
+    rackName: dc16-r01-u01
+  identifier: 9C05D6F40E46
+  fabricClass: unifi
