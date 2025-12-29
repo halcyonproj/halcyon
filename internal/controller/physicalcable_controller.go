@@ -26,8 +26,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	halcyonv1alpha1 "halcyonproj.dev/halcyon/v2/api/v1alpha1"
-	"halcyonproj.dev/halcyon/v2/internal/fabric"
+	halcyonv1alpha1 "halcyonproj.dev/halcyon/api/v1alpha1"
+	"halcyonproj.dev/halcyon/internal/fabric"
 )
 
 // PhysicalCableReconciler reconciles a PhysicalCable object

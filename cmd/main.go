@@ -21,7 +21,7 @@ import (
 	"flag"
 	"os"
 
-	"halcyonproj.dev/halcyon/v2/internal/fabric"
+	"halcyonproj.dev/halcyon/internal/fabric"
 
 	// Import all Kubernetes client auth plugins (e.g. Azure, GCP, OIDC, etc.)
 	// to ensure that exec-entrypoint and run can make use of them.
@@ -37,8 +37,8 @@ import (
 	metricsserver "sigs.k8s.io/controller-runtime/pkg/metrics/server"
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 
-	halcyonv1alpha1 "halcyonproj.dev/halcyon/v2/api/v1alpha1"
-	"halcyonproj.dev/halcyon/v2/internal/controller"
+	halcyonv1alpha1 "halcyonproj.dev/halcyon/api/v1alpha1"
+	"halcyonproj.dev/halcyon/internal/controller"
 	// +kubebuilder:scaffold:imports
 )
 

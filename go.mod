@@ -1,4 +1,4 @@
-module halcyonproj.dev/halcyon/v2
+module halcyonproj.dev/halcyon
 
 go 1.22.0
 

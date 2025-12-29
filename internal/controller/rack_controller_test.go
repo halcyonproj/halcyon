@@ -27,7 +27,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	halcyonv1alpha1 "halcyonproj.dev/halcyon/v2/api/v1alpha1"
+	halcyonv1alpha1 "halcyonproj.dev/halcyon/api/v1alpha1"
 )
 
 var _ = Describe("Rack Controller", func() {

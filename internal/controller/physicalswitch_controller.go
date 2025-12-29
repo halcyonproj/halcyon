@@ -19,7 +19,7 @@ package controller
 import (
 	"context"
 	"fmt"
-	"halcyonproj.dev/halcyon/v2/internal/fabric"
+	"halcyonproj.dev/halcyon/internal/fabric"
 	"time"
 
 	"github.com/unpoller/unifi"
@@ -34,7 +34,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/predicate"
 
-	halcyonv1alpha1 "halcyonproj.dev/halcyon/v2/api/v1alpha1"
+	halcyonv1alpha1 "halcyonproj.dev/halcyon/api/v1alpha1"
 )
 
 // PhysicalSwitchReconciler reconciles a PhysicalSwitch object

@@ -33,7 +33,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	halcyonv1alpha1 "halcyonproj.dev/halcyon/v2/api/v1alpha1"
+	halcyonv1alpha1 "halcyonproj.dev/halcyon/api/v1alpha1"
 	// +kubebuilder:scaffold:imports
 )
 

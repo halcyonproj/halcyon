@@ -24,7 +24,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"halcyonproj.dev/halcyon/v2/test/utils"
+	"halcyonproj.dev/halcyon/test/utils"
 )
 
 const namespace = "halcyon-system"

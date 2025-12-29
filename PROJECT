@@ -6,7 +6,7 @@ domain: halcyonproj.dev
 layout:
 - go.kubebuilder.io/v4
 projectName: halcyon
-repo: halcyonproj.dev/halcyon/v2
+repo: github.com/halcyonproj/halcyon
 resources:
 - api:
     crdVersion: v1
@@ -14,7 +14,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: Region
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
   webhooks:
     validation: true
@@ -25,7 +25,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: AvailabilityZone
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
   webhooks:
     defaulting: true
@@ -37,7 +37,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: DataCenter
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -45,7 +45,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: Rack
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -53,7 +53,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: RackType
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -61,7 +61,7 @@ resources:
   controller: false
   domain: halcyonproj.dev
   kind: PhysicalCompute
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -69,7 +69,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: PhysicalCable
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -77,7 +77,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: PhysicalInterface
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -85,7 +85,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: PhysicalSwitch
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -93,7 +93,7 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: PhysicalPort
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 - api:
     crdVersion: v1
@@ -101,6 +101,6 @@ resources:
   controller: true
   domain: halcyonproj.dev
   kind: FabricClass
-  path: halcyonproj.dev/halcyon/v2/api/v1alpha1
+  path: halcyonproj.dev/halcyon/api/v1alpha1
   version: v1alpha1
 version: "3"
