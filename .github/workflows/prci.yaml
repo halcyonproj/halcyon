@@ -18,13 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
       - run: make build
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+      - run: make test
   report-status:
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [build, test]
     if: ${{ !cancelled() }}
     steps:
       - name: Ensure CI Success
         uses: DataDog/ensure-ci-success@b0d931ac77c810490e61964c321103040eef888e
         with:
-          full-details-summary: true
-
+          ignored-name-patterns: |
+            test
