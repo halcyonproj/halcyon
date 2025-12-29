@@ -9,7 +9,7 @@ spec:
   computeClass: supermicro
   UID: "off"
   location:
-    rackName: c1
+    rackName: dc16-r02-u01
   bmc:
     powerState: "off"
     connection:
@@ -31,7 +31,7 @@ spec:
   computeClass: sun
   UID: "off"
   location:
-    rackName: c1
+    rackName: dc16-r02-u01
   bmc:
     powerState: "off"
     connection:
