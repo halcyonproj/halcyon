@@ -14,10 +14,8 @@ jobs:
         with:
           node-version: 18.x
       - run: npm install -g github-label-sync@v3.0.0
-        shell: bash
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
         with:
           sparse-checkout: .github/labels.yaml
       - run: |
           github-label-sync --access-token ${{ github.token }} --labels .github/labels.yaml ${{ github.repository }}
-        shell: bash

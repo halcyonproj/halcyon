@@ -23,9 +23,15 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
       - run: make test
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
+      - run: make docs
+      - run: $([ -z "$(git status --porcelain)" ])
   report-status:
     runs-on: ubuntu-latest
-    needs: [build, test]
+    needs: [build, test, docs]
     if: ${{ !cancelled() }}
     steps:
       - name: Ensure CI Success
