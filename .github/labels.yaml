@@ -1,6 +1,9 @@
 - name: 'area/compute'
   color: 'C5DEF5'
 
+- name: 'area/controller'
+  color: 'C5DEF5'
+
 - name: 'area/iam'
   color: 'C5DEF5'
 
