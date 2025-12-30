@@ -19,5 +19,5 @@ jobs:
         with:
           sparse-checkout: .github/labels.yaml
       - run: |
-          github-label-sync --access-token ${{ inputs.github_token }} --labels .github/labels.yaml ${{ github.repository }}
+          github-label-sync --access-token ${{ github.token }} --labels .github/labels.yaml ${{ github.repository }}
         shell: bash
