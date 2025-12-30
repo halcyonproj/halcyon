@@ -1,0 +1,14 @@
+- name: 'area/compute'
+  color: 'C5DEF5'
+
+- name: 'area/iam'
+  color: 'C5DEF5'
+
+- name: 'area/networking'
+  color: 'C5DEF5'
+
+- name: 'area/physical'
+  color: 'C5DEF5'
+
+- name: 'area/storage'
+  color: 'C5DEF5'
