@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-	  - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
-		with:
-		  node-version: 18.x
-	  - run: npm install -g github-label-sync@v3.0.0
-		shell: bash
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
+        with:
+          node-version: 18.x
+      - run: npm install -g github-label-sync@v3.0.0
+        shell: bash
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
         with:
           sparse-checkout: .github/labels.yaml
