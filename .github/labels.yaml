@@ -10,6 +10,9 @@
 - name: 'area/networking'
   color: 'C5DEF5'
 
+- name: 'area/observability'
+  color: 'C5DEF5'
+
 - name: 'area/physical'
   color: 'C5DEF5'
 
