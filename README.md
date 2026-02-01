@@ -1,5 +1,5 @@
 # halcyon
-The building blocks for an open source, private cloud
+The open control plane for the software-defined datacenter.
 
 > [!WARNING]
 > Halycon is under active development. Please be advised that builds off of main are likely unstable.
